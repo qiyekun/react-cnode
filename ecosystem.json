@@ -1,5 +1,5 @@
 {
-  "apps":[
+  "apps": [
     {
       "name": "cnode",
       "script": "./server/server.js",
@@ -8,5 +8,15 @@
         "HOST": "localhost"
       }
     }
-  ]
+  ],
+  "deploy": {
+    "production": {
+      "user": "root",
+      "host": "39.107.111.228",
+      "repo": "git@github.com:qiyekun/react-cnode.git",
+      "ref": "origin/master",
+      "path": "/root/app/react-cnode",
+      "post-deploy": "cnpm install && npm run deploy && pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
 }
