@@ -16,7 +16,7 @@
       "repo": "git@github.com:qiyekun/react-cnode.git",
       "ref": "origin/master",
       "path": "/root/app/react-cnode",
-      "post-deploy": "pwd && cnpm install && npm run deploy && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy": "node app.js"
     }
   }
 }
